@@ -1,0 +1,47 @@
+[project]
+name = "lpc176x5x-patcher"
+version = "0.1.0"
+description = "Patch script for the LPC176x5x SVD"
+readme = "README.adoc"
+requires-python = ">=3.13"
+dependencies = []
+authors = [{ name = "Marshall Hunt", email = "marshallhunt@live.com" }]
+
+[project.urls]
+Repository = "https://www.github.com/MarshTheBacca/lpc6x5x-pac"
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+strict = true
+disallow_any_decorated = false
+enable_error_code = [
+    "deprecated",
+    "explicit-override",
+    "ignore-without-code",
+    "mutable-override",
+    "narrowed-type-not-subtype",
+    "possibly-undefined",
+    "redundant-expr",
+    "redundant-self",
+    "truthy-bool",
+    "truthy-iterable",
+    "unused-awaitable",
+]
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "lf"
+quote-style = "double"
+
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = ["classmethod", "pydantic.validator", "classproperty"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["T", "COM812"]
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 88
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

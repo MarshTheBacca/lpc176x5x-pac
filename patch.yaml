@@ -1,0 +1,115 @@
+_svd: LPC176x5x_v0.2-python.svd
+
+GPDMA:
+  _modify:
+    CONFIG:
+      name: "DMAC_CONFIG"
+    "CONFIG%s":
+      name: "CH_CONFIG%s"
+
+RTC:
+  CCR:
+    CLKEN:
+      _replace_enum:
+        ENABLED: [1, "The time counters are enabled."]
+        DISABLED:
+          [0, "The time counters are disabled so that they may be initialized."]
+    CCALEN:
+      _replace_enum:
+        DISABLED: [1, "The calibration counter is disabled and reset to zero."]
+        ENABLED:
+          [
+            0,
+            "The calibration counter is enabled and counting, using the 1 Hz clock.",
+          ]
+
+PINCONNECT:
+  PINSEL1:
+    P0_29:
+      _replace_enum:
+        GPIO_P0: [0x0, "GPIO P0.29"]
+        USB_DP: [0x1, "USB_D+"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P0_30:
+      _replace_enum:
+        GPIO_P0: [0x0, "GPIO P0.30"]
+        USB_DM: [0x1, "USB_D-"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+  PINSEL2:
+    P1_0:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.0"]
+        ENET_TXD0: [0x1, "ENET_TXD0"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P1_1:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.1"]
+        ENET_TXD1: [0x1, "ENET_TXD1"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P1_4:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.4."]
+        ENET_TX_EN: [0x1, "ENET_TX_EN"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P1_8:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.8."]
+        ENET_CRS: [0x1, "ENET_CRS"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P1_9:
+      _replace_enum:
+        GPIO_PORT_1: [0x0, "GPIO Port 1.9"]
+        ENET_RXD0: [0x1, "ENET_RXD0"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P1_10:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.10"]
+        ENET_RXD1: [0x1, "ENET_RXD1"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P1_14:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.14"]
+        ENET_RX_ER: [0x1, "ENET_RX_ER"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P1_15:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.15"]
+        ENET_REF_CLK: [0x1, "ENET_REF_CLK"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+  PINSEL3:
+    P1_16:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.16"]
+        ENET_MDC: [0x1, "ENET_MDC"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+    P1_17:
+      _replace_enum:
+        GPIO_P1: [0x0, "GPIO P1.17"]
+        ENET_MDIO: [0x1, "ENET_MDIO"]
+        RESERVED_2: [0x2, "Reserved"]
+        RESERVED_3: [0x3, "Reserved"]
+  PINMODE0:
+    P0_06MODE:
+      _replace_enum:
+        PULL_UP: [0x0, "Pull-up enabled"]
+        REPEATER: [0x1, "Repeater mode enabled"]
+        NONE: [0x2, "Neither pull-up nor pull-down"]
+        PULL_DOWN: [0x3, "Pull-down enabled"]
+
+CAN1:
+  ICR:
+    ERRDIR:
+      _replace_enum:
+        TX_ERR: [0, "Error occurred during transmitting."]
+        RX_ERR: [1, "Error occurred during receiving."]
