@@ -1,6 +1,6 @@
 [package]
 name = "lpc176x5x-pac"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Marshall Hunt <marshallhunt@live.com>"]
 description = "A Peripheral Access Crate for the NXP LPC176x5x series microcontrollers."
