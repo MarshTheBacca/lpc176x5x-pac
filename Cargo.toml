@@ -2,13 +2,28 @@
 name = "lpc176x5x-pac"
 version = "0.1.0"
 edition = "2024"
+authors = ["Marshall Hunt <marshallhunt@live.com>"]
+description = "A Peripheral Access Crate for the NXP LPC176x5x series microcontrollers."
+license = "MIT"
+repository = "https://github.com/MarshTheBacca/lpc176x5x-pac"
+keywords = ["arm", "cortex-m", "lpc176x5x", "pac", "embedded"]
+categories = ["embedded", "no-std"]
+
+include = [
+    "src/**/*.rs",
+    "Cargo.toml",
+    "device.x",
+    "build.rs",
+    "README.adoc",
+    "LICENSE",
+]
 
 [dependencies]
-critical-section = { version = "1.1", optional = true }
 vcell = "0.1.3"
-cortex-m = "0.7"
-cortex-m-rt = { version = "0.7", optional = true }
+cortex-m = "0.7.7"
+cortex-m-rt = { version = "0.7.5", optional = true }
+critical-section = { version = "1.2", optional = true }
 
 [features]
-rt = ["cortex-m-rt"]
+rt = ["cortex-m-rt/device"]
 critical-section = ["dep:critical-section"]
