@@ -8,13 +8,13 @@ license = "MIT"
 repository = "https://github.com/MarshTheBacca/lpc176x5x-pac"
 keywords = ["arm", "cortex-m", "lpc176x5x", "pac", "embedded"]
 categories = ["embedded", "no-std"]
-
+readme = "README.md"
 include = [
     "src/**/*.rs",
     "Cargo.toml",
     "device.x",
     "build.rs",
-    "README.adoc",
+    "README.md",
     "LICENSE",
 ]
 
